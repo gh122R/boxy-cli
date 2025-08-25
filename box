@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use App\Facades\Kernel\ConsoleFacade as Console;
+use App\Kernel\App;
+
+require_once 'vendor/autoload.php';
+
+$app = new App();
+
+Console::handle($argv);
