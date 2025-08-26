@@ -1,5 +1,5 @@
 {
-    "name": "boxyCli/boxyCli",
+    "name": "boxy/boxy",
     "type": "library",
     "description": "micro cli framework for PHP 8.4+",
     "keywords": ["cli","terminal"],
