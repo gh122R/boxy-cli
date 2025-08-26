@@ -1,4 +1,11 @@
 {
+    "name": "boxy/boxy",
+    "type": "library",
+    "description": "micro cli framework for PHP 8.4+",
+    "keywords": ["cli","terminal"],
+    "homepage": "https://github.com/Seldaek/monolog",
+    "license": "MIT",
+
     "autoload": {
         "psr-4": {
             "App\\": "app/",
