@@ -41,6 +41,7 @@ class WelcomeCommand extends Command implements CommandInterface
 
         $climate->red()->dim(env('app_name') . " | версия: " . env('app_version'));
         $climate->dim('Версия php: ' . phpversion());
+        $climate->dim('Разработал: ' . env('author'));
 
         $guide = $this->guideAll();
 
@@ -80,8 +81,6 @@ class WelcomeCommand extends Command implements CommandInterface
                 if (is_array($info['parameters'])) {
                     $climate->tab()->out(" - Параметры для передачи в вызов: " . implode(', ', $info['parameters']));
                 }
-
-
             }
 
             $climate->br();

@@ -70,6 +70,32 @@ readonly class CommandService
     }
 
     /**
+     * @param string $filePath
+     * @param bool $output
+     * @return bool
+     */
+    public function deleteFile(string $filePath, bool $output = true): bool
+    {
+        try {
+            unlink($filePath);
+
+            if ($output) {
+                $this->message->success("Файл $filePath успешно удалён");
+            }
+
+            return true;
+        } catch (Exception) {
+            logger()->error("Произошла ошибка при удалении файла $filePath");
+
+            if ($output) {
+                $this->message->error("Произошла ошибка при удалении файла $filePath");
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @param string $command
      * @param bool $showOutput
      * @return bool
