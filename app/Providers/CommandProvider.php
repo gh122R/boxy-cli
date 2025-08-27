@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Providers;
+namespace Boxy\Providers;
 
-use App\Interfaces\Provider\ProviderInterface;
-use App\Traits\CommandsLoader;
-use App\Traits\CommandsRegister;
+use Boxy\Interfaces\Provider\ProviderInterface;
+use Boxy\Traits\CommandsLoader;
+use Boxy\Traits\CommandsRegister;
 use Command\TestCommand;
 
 final class CommandProvider implements ProviderInterface

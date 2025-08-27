@@ -2,9 +2,9 @@
 
 namespace Command\basic;
 
-use App\Interfaces\Command\CommandInterface;
-use App\ParentClasses\Command;
-use App\Traits\CommandGuide;
+use Boxy\Interfaces\Command\CommandInterface;
+use Boxy\ParentClasses\Command;
+use Boxy\Traits\CommandGuide;
 use League\CLImate\CLImate;
 
 use function Laravel\Prompts\text;
@@ -85,6 +85,8 @@ class WelcomeCommand extends Command implements CommandInterface
 
             $climate->br();
         }
+
+
     }
 
     public function search()

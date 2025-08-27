@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Helpers\Env;
+namespace Boxy\Helpers\Env;
 
-use App\Interfaces\Env\EnvInterface;;
+use Boxy\Interfaces\Env\EnvInterface;;
 
 final readonly class Env implements EnvInterface
 {

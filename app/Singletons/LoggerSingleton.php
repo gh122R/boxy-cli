@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Singletons;
+namespace Boxy\Singletons;
 
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
@@ -21,7 +21,6 @@ final class LoggerSingleton
 
     public static function getInstance(): Logger
     {
-        $container = container();
         $handler = new RotatingFileHandler(
             filename: DEBUG_DIR . '/runtime.log',
             maxFiles: 2
@@ -29,8 +28,8 @@ final class LoggerSingleton
 
         if (self::$instance === null) {
 
-            if ($container !== null) {
-                $handler = $container->get('LoggerHandler');
+            if (container() !== null) {
+                $handler = container()->get('LoggerHandler');
             }
 
             self::$instance = new Logger('app');

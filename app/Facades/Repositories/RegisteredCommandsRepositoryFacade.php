@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Facades\Repositories;
+namespace Boxy\Facades\Repositories;
 
-use App\Facades\Facade;
+use Boxy\Facades\Facade;
 
 class RegisteredCommandsRepositoryFacade extends Facade
 {

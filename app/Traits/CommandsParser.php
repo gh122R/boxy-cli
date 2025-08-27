@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Traits;
+namespace Boxy\Traits;
 
-use App\DTO\ParsedCommandsDTO;
+use Boxy\DTO\ParsedCommandsDTO;
 
 trait CommandsParser
 {

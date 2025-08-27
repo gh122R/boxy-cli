@@ -3,12 +3,12 @@
     "type": "library",
     "description": "micro cli framework for PHP 8.4+",
     "keywords": ["cli","terminal"],
-    "homepage": "https://github.com/Seldaek/monolog",
+    "homepage": "https://github.com/gh122R/boxy-cli",
     "license": "MIT",
 
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
+            "Boxy\\": "app/",
             "Command\\": "commands/"
         },
         "files": [
@@ -18,10 +18,17 @@
     },
     "authors": [
         {
-            "name": "Арсений Бушуев"
+            "name": "Арсений Бушуев",
+            "email": "gh122.r507@gmail.com"
         }
     ],
+
+    "bin": [
+        "box"
+    ],
+
     "require": {
+        "php": ">=8.4",
         "league/climate": "^3.10",
         "vlucas/phpdotenv": "^5.6",
         "monolog/monolog": "^3.9",

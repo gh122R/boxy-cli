@@ -2,15 +2,18 @@
 
 declare(strict_types=1);
 
-namespace App\Traits;
+namespace Boxy\Traits;
 
-use App\Repositories\RegisteredCommandsRepository;
+use Boxy\Repositories\RegisteredCommandsRepository;
+use Boxy\Singletons\Config\DirectoriesDTOSingleton;
+use Boxy\Singletons\Config\NamespacesDTOSingleton;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
 trait CommandsLoader
 {
     use CommandInfo;
+
     private RegisteredCommandsRepository $repository;
 
     public function CommandsLoaderInit(RegisteredCommandsRepository $repository): void
@@ -20,18 +23,20 @@ trait CommandsLoader
 
     protected function getCommands(): array
     {
+        $commandsDirectory = DirectoriesDTOSingleton::getInstance()->commandsDirectory;
+        $commandsNamespace = NamespacesDTOSingleton::getInstance()->commandsNamespace;
         $foundCommands = [];
 
         $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator(COMMANDS_DIR)
+            new RecursiveDirectoryIterator($commandsDirectory)
         );
 
         foreach ($iterator as $file) {
             if ($file->isFile() && str_ends_with($file->getFilename(), 'Command.php')) {
-                $relativePath = str_replace(COMMANDS_DIR . DIRECTORY_SEPARATOR, '', $file->getPathname());
+                $relativePath = str_replace($commandsDirectory . DIRECTORY_SEPARATOR, '', $file->getPathname());
 
                 $className = str_replace([DIRECTORY_SEPARATOR, '.php'], ['\\', ''], $relativePath);
-                $fullClassName = "Command\\$className";
+                $fullClassName = $commandsNamespace . $className;
 
                 if (class_exists($fullClassName)) {
                     $foundCommands[] = $fullClassName;

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Kernel;
+namespace Boxy\Kernel;
 
-use App\Exceptions\CommandNotFoundException;
-use App\Exceptions\InvalidCommandOptionException;
-use App\Interfaces\Kernel\ConsoleInterface;
-use App\Services\MessageService;
-use App\Traits\CommandsMatcher;
-use App\Traits\CommandsParser;
-use App\Traits\CommandsRunner;
+use Boxy\Exceptions\CommandNotFoundException;
+use Boxy\Exceptions\InvalidCommandOptionException;
+use Boxy\Interfaces\Kernel\ConsoleInterface;
+use Boxy\Services\MessageService;
+use Boxy\Traits\CommandsMatcher;
+use Boxy\Traits\CommandsParser;
+use Boxy\Traits\CommandsRunner;
 
 final class Console implements ConsoleInterface
 {

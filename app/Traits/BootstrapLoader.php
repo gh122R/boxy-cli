@@ -2,19 +2,26 @@
 
 declare(strict_types=1);
 
-namespace App\Traits;
+namespace Boxy\Traits;
+
+use Boxy\Singletons\Config\DirectoriesDTOSingleton;
+use Boxy\Singletons\Config\NamespacesDTOSingleton;
 
 trait BootstrapLoader
 {
     protected function getBootClasses(): array
     {
-        $files = scandir(BOOTSTRAP_DIR, SCANDIR_SORT_NONE);
+        $namespace = NamespacesDTOSingleton::getInstance()->bootstrapNamespace;
+        $bootstrapDirectory = DirectoriesDTOSingleton::getInstance()->bootstrapDirectory;
+        $files = scandir($bootstrapDirectory, SCANDIR_SORT_NONE);
         $foundBootClasses = [];
 
         foreach ($files as $file) {
             if (str_ends_with($file, ".php")) {
                 $className = pathinfo($file, PATHINFO_FILENAME);
-                $fullClassName = "App\\Bootstrap\\$className";
+
+
+                $fullClassName = $namespace . $className;
 
                 if (class_exists($fullClassName)) {
                     $foundBootClasses[] = $fullClassName;

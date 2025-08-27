@@ -1,10 +1,12 @@
 <?php
 
-use App\Container\Container;
-use App\Facades\Facade;
-use App\Repositories\RegisteredCommandsRepository;
-use App\Services\CommandService;
-use App\Singletons\LoggerSingleton;
+declare(strict_types=1);
+
+use Boxy\Container\Container;
+use Boxy\Facades\Facade;
+use Boxy\Repositories\RegisteredCommandsRepository;
+use Boxy\Services\CommandService;
+use Boxy\Singletons\LoggerSingleton;
 use Monolog\Logger;
 
 if (!function_exists('env')) {

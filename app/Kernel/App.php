@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Kernel;
+namespace Boxy\Kernel;
 
-use App\DTO\AppConfigDTO;
-use App\Interfaces\Kernel\AppInterface;
-use App\Traits\BootstrapLoader;
-use App\Traits\ProvidersLoader;
+use Boxy\DTO\AppConfigDTO;
+use Boxy\Interfaces\Kernel\AppInterface;
+use Boxy\Traits\BootstrapLoader;
+use Boxy\Traits\ProvidersLoader;
 
 class App implements AppInterface
 {

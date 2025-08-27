@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Facades;
+namespace Boxy\Facades;
 
-use App\Container\Container;
+use Boxy\Container\Container;
 use Exception;
 
 class Facade

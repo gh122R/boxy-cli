@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Bootstrap;
+namespace Boxy\Bootstrap;
 
-use App\Container\Container;
-use App\DTO\AppConfigDTO;
-use App\Facades\Facade;
-use App\Helpers\Env\Env;
-use App\Helpers\Env\EnvLoader;
-use App\Helpers\Env\EnvValidator;
-use App\Interfaces\Bootstrap\BootstrapInterface;
-use App\Kernel\Console;
-use App\Repositories\RegisteredCommandsRepository;
-use App\Services\CommandService;
-use App\Services\MessageService;
+use Boxy\Container\Container;
+
+use Boxy\DTO\AppConfigDTO;
+use Boxy\Facades\Facade;
+use Boxy\Helpers\Env\Env;
+use Boxy\Helpers\Env\EnvLoader;
+use Boxy\Helpers\Env\EnvValidator;
+use Boxy\Interfaces\Bootstrap\BootstrapInterface;
+use Boxy\Kernel\Console;
+use Boxy\Repositories\RegisteredCommandsRepository;
+use Boxy\Services\CommandService;
+use Boxy\Services\MessageService;
 use League\CLImate\CLImate;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;

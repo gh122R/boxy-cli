@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Helpers\Env;
+namespace Boxy\Helpers\Env;
 
-use App\Interfaces\Env\EnvValidatorInterface;
+use Boxy\Interfaces\Env\EnvValidatorInterface;
 use Exception;
 
 final readonly class EnvValidator implements EnvValidatorInterface

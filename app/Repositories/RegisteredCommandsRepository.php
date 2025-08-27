@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories;
+namespace Boxy\Repositories;
 
 class RegisteredCommandsRepository
 {

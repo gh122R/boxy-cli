@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Container;
+declare(strict_types=1);
+
+namespace Boxy\Container;
 
 use Exception;
 

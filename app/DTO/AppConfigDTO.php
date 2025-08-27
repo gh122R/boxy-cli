@@ -2,23 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\DTO;
+namespace Boxy\DTO;
 
-final class AppConfigDTO
+use Boxy\Interfaces\DTO\DTOInterface;
+use Boxy\ParentClasses\ConfigDTO;
+
+final class AppConfigDTO extends ConfigDTO implements DTOInterface
 {
-    public array $config;
-
     public function mount(): void
     {
         $this->config = require CONFIG_DIR . '/app.php';
-    }
-
-    public function __get(string $name): mixed
-    {
-        if (!isset($this->config)) {
-            $this->mount();
-        }
-
-        return $this->config[$name] ?? null;
     }
 }

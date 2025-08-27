@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces\Env;
+namespace Boxy\Interfaces\Env;
 
 interface EnvValidatorInterface
 {

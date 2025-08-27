@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces\Command;
+namespace Boxy\Interfaces\Command;
 
 interface CommandInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App\Interfaces\Bootstrap;
+namespace Boxy\Interfaces\Bootstrap;
 
 interface BootstrapInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces\Provider;
+namespace Boxy\Interfaces\Provider;
 
 interface ProviderInterface
 {

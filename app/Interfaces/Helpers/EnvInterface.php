@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interface\Helpers;
+namespace Boxy\Interface\Helpers;
 
 interface EnvInterface
 {

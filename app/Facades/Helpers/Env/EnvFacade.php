@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace App\Facades\Helpers\Env;
+namespace Boxy\Facades\Helpers\Env;
 
-use App\Facades\Facade;
+use Boxy\Facades\Facade;
 
 class EnvFacade extends Facade
 {

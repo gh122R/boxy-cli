@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace App\Facades\Kernel;
+namespace Boxy\Facades\Kernel;
 
-use App\Facades\Facade;
+use Boxy\Facades\Facade;
 
 class AppFacade extends Facade
 {

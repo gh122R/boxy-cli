@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces\Kernel;
+namespace Boxy\Interfaces\Kernel;
 
 interface ConsoleInterface
 {

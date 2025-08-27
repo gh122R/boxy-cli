@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Interfaces\Kernel;
-
+namespace Boxy\Interfaces\Kernel;
 interface AppInterface
 {
     public function setName(string $name): void;

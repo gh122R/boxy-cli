@@ -2,18 +2,24 @@
 
 declare(strict_types=1);
 
-namespace App\Traits;
+namespace Boxy\Traits;
+
+use Boxy\Singletons\Config\DirectoriesDTOSingleton;
+use Boxy\Singletons\Config\NamespacesDTOSingleton;
 
 trait ProvidersLoader
 {
     protected function getProviders(): array
     {
-        $files = scandir(PROVIDERS_DIR, SCANDIR_SORT_NONE);
+        $providersDirectory = DirectoriesDTOSingleton::getInstance()->providersDirectory;
+        $providersNamespace = NamespacesDTOSingleton::getInstance()->providersNamespace;
+
+        $files = scandir($providersDirectory, SCANDIR_SORT_NONE);
 
         foreach ($files as $file) {
             if (str_ends_with($file, "Provider.php")) {
                 $className = pathinfo($file, PATHINFO_FILENAME);
-                $fullClassName = "App\\Providers\\$className";
+                $fullClassName = $providersNamespace . $className;
 
                 if (class_exists($fullClassName)) {
                     $foundProviders[] = $fullClassName;

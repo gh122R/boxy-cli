@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Helpers\Env;
+namespace Boxy\Helpers\Env;
 
-use App\Interfaces\Env\EnvLoaderInterface;
+use Boxy\Interfaces\Env\EnvLoaderInterface;
 use Dotenv\Dotenv;
 
 final readonly class EnvLoader implements EnvLoaderInterface

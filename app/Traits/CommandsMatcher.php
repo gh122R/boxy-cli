@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Traits;
+namespace Boxy\Traits;
 
-use App\DTO\MatchedCommandDTO;
-use App\DTO\ParsedCommandsDTO;
-use App\Exceptions\CommandNotFoundException;
-use App\Exceptions\InvalidCommandOptionException;
-use App\Repositories\RegisteredCommandsRepository;
-use App\Services\MessageService;
+use Boxy\DTO\MatchedCommandDTO;
+use Boxy\DTO\ParsedCommandsDTO;
+use Boxy\Exceptions\CommandNotFoundException;
+use Boxy\Exceptions\InvalidCommandOptionException;
+use Boxy\Repositories\RegisteredCommandsRepository;
+use Boxy\Services\MessageService;
 
 trait CommandsMatcher
 {
