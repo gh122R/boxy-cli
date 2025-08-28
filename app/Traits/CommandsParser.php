@@ -16,6 +16,8 @@ trait CommandsParser
 
         $separator = env('command_separator');
         $flagPointer = env('flag_pointer');
+        $argumentPointer = env('argument_pointer');
+        $parameters = [];
         $flags = [];
 
         array_shift($argv);
@@ -30,7 +32,13 @@ trait CommandsParser
         }
 
         foreach ($argv as $item) {
-            if ($item == str_starts_with($item, $flagPointer)) {
+            if (str_starts_with($item, $argumentPointer)) {
+                $item = str_replace($argumentPointer, "", $item);
+
+                $parameters[] = $item;
+            }
+
+            if (str_starts_with($item, $flagPointer)) {
                 $item = str_replace($flagPointer, "", $item);
 
                 $flags[] = $item;
@@ -40,7 +48,8 @@ trait CommandsParser
         return new ParsedCommandsDTO(
             command: $command,
             option: $parameter,
-            flags: $flags
+            flags: $flags,
+            parameters: $parameters
         );
     }
 }

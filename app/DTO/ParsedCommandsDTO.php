@@ -10,6 +10,7 @@ class ParsedCommandsDTO
         public string $command,
         public array|string|null $option,
         public array $flags,
+        public array $parameters,
     ) {
     }
 }

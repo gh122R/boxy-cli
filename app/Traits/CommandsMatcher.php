@@ -57,7 +57,7 @@ trait CommandsMatcher
             $option = null;
         }
 
-        $parameters = $foundCommand['parameters'] ?? null;
+        $parameters = $foundCommand['parameters'] ?? $dto->parameters;
 
         return new MatchedCommandDTO(
             name: $name,
