@@ -25,6 +25,10 @@ trait CommandsRunner
         }
 
         if ($this->option !== null) {
+            if ($this->parameters !== null) {
+                return $this->runOptionWithParam();
+            }
+
             return $this->runOption();
         }
 
@@ -102,7 +106,7 @@ trait CommandsRunner
                 new $class()->$action();
             }
 
-             $class->$action();
+            $class->$action();
         }
     }
 
@@ -119,5 +123,24 @@ trait CommandsRunner
         }
 
         return $class->$action();
+    }
+
+    public function runOptionWithParam()
+    {
+        [$class, $action] = $this->option[0];
+
+        if (is_string($class)) {
+            if (!class_exists($class)) {
+                return null;
+            }
+
+            return is_array($this->parameters)
+                ? new $class()->$action(...$this->parameters)
+                : new $class()->$action($this->parameters);
+        }
+
+        return is_array($this->parameters)
+            ? $class->$action(...$this->parameters)
+            : $class->$action($this->parameters);
     }
 }
